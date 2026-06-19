@@ -1,0 +1,460 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & VARIABLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Design System Tokens */
+:root {
+    --bg-color: #0f172a;
+    --second-bg-color: #1e293b;
+    --text-color: #f8fafc;
+    --main-color: #00adb5;
+    --border-color: #334155;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 8rem; 
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Accessibility Focus Indicator */
+:focus-visible { 
+    outline: .2rem solid var(--main-color); 
+    outline-offset: .2rem; 
+}
+
+/* ==========================================================================
+   2. REUSABLE COMPONENTS (Headings & Buttons)
+   ========================================================================== */
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    padding: 2rem 9%;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.navbar a:hover, 
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; /* Hidden on desktop view */
+}
+
+/* ==========================================================================
+   4. HERO / HOME SECTION
+   ========================================================================== */
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap; 
+}
+
+.home-content {
+    flex: 1 1 50rem;
+}
+
+.home-content h3 {
+    font-size: 2.8rem; 
+    font-weight: 700;
+}
+
+.home-content h1 {
+    font-size: 6.2rem; 
+    font-weight: 700;
+    line-height: 1.2;
+    margin: .5rem 0;
+}
+
+.home-content h3 .text-animate {
+    font-size: 3.6rem; 
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.home-content p {
+    font-size: 2rem; 
+    line-height: 1.7;
+    margin: 2rem 0 3rem;
+}
+
+/* Hero Image Effects */
+.home-img {
+    flex: 1 1 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 30vw; 
+    min-width: 280px;
+    max-width: 360px;
+    height: 460px; 
+    border-radius: 2.5rem; 
+    border: .3rem solid var(--main-color); 
+    box-shadow: 0 0 3rem var(--main-color); 
+    object-fit: cover; 
+    transition: .5s ease; 
+}
+
+.home-img img:hover {
+    transform: translateY(-15px) scale(1.02); 
+    box-shadow: 0 1.5rem 5rem var(--main-color); 
+}
+
+/* Hero Social Media Links */
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem; 
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+/* ==========================================================================
+   5. ABOUT ME SECTION
+   ========================================================================== */
+.about {
+    background: var(--second-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+    color: var(--main-color);
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+    max-width: 80rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+/* ==========================================================================
+   6. SKILLS SECTION (Grid Layout)
+   ========================================================================== */
+.skills-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2.5rem;
+}
+
+.skill-card {
+    background: var(--second-bg-color);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    transition: .4s ease;
+    border: 1px solid var(--border-color);
+}
+
+.skill-card i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.skill-card h3 {
+    font-size: 1.8rem;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 173, 181, 0.2);
+    border-color: var(--main-color);
+}
+
+/* ==========================================================================
+   7. PROJECTS SECTION (Grid Layout)
+   ========================================================================== */
+.projects {
+    background: var(--second-bg-color);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+}
+
+.project-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,.3);
+    overflow: hidden;
+    height: 25rem;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    transition: .5s ease;
+}
+
+.project-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.project-layer {
+    padding: 3rem;
+    text-align: center;
+}
+
+.project-layer h4 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+}
+
+.project-layer p {
+    font-size: 1.4rem;
+    margin: 1rem 0 2rem;
+    color: #94a3b8;
+}
+
+.project-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem; 
+    height: 4.5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+    color: var(--bg-color);
+    font-size: 1.8rem;
+}
+
+/* ==========================================================================
+   8. CONTACT SECTION
+   ========================================================================== */
+.contact {
+    min-height: auto;
+    padding-bottom: 7rem;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 60rem;
+    margin: 0 auto;
+    background: var(--second-bg-color); 
+    padding: 4rem;
+    border-radius: 2.5rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+    border: .2rem solid var(--main-color); 
+}
+
+.contact h3 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.contact p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: #eee;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--bg-color);
+    padding: 1.5rem 2.5rem;
+    border-radius: 1.5rem;
+    border: .1rem solid var(--border-color);
+}
+
+.info-item i {
+    font-size: 2.4rem;
+    color: var(--main-color);
+}
+
+.info-item span {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* ==========================================================================
+   9. FOOTER SECTION
+   ========================================================================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    border-top: 1px solid var(--second-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--bg-color);
+}
+
+/* ==========================================================================
+   10. RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 2rem 3%;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    /* Mobile Dropdown Menu Config */
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none; 
+        flex-direction: column;
+    }
+
+    /* JavaScript Toggle Class */
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 1.5rem 0; 
+    }
+}
