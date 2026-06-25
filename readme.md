@@ -20,9 +20,9 @@ The portfolio features a dedicated, accessible section highlighting major intern
 * **Description:** A secure, dark-themed calculation engine built with Vanilla JavaScript. Engineered with a strict tokenized safe math parser to block injection vulnerabilities, full physical hardware keyboard tracking, and live assistive technologies support (`aria-live`).
 * **Links:** [Live Project](https://tesfahun19.github.io/CodeAlpha_Calculator/) | [Source Code](https://github.com/tesfahun19/CodeAlpha_Calculator)
 
-### 3. Music Player (Task 3)
-* **Description:** A feature-rich audio streaming container with playlist controls and dynamic state management workflows.
-* **Status:** ⏳ *Coming Soon*
+### 3. Professional Web Music Player (Task 3)
+* **Description:** A feature-rich web music player featuring dynamic audio stream controls, custom playlists, and fully responsive layout aesthetics. Built using modern JavaScript audio API workflows, smooth transition animations, and fully audited, lightweight styles.
+* **Links:** [Live Project](https://tesfahun19.github.io/codealpha-music-player/) | [Source Code](https://github.com/tesfahun19/codealpha-music-player)
 
 ---
 
